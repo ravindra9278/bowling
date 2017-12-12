@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  score: MyText
+  player_count: 1
+  game_turn: 1
+
+two:
+  score: MyText
+  player_count: 1
+  game_turn: 1

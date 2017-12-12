@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h3 style="text-align: center;">Player Board with Frames</h1>
+<% @frames.each do |frame_count_user_id, player_frame| %>
+  <table class="table table-bordered">
+    <thead>
+      <tr class="table-secondary">
+        <th scope="col">Player Name</th>
+        <th scope="col">Turn Number</th>
+        <th scope="col">Try1</th>
+        <th scope="col">Try2</th>
+        <th scope="col">Score</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    
+    <% player_frame.each do |frame| %>
+      <tbody>
+        <tr class="table-secondary">
+          <th scope="row"><%= frame.user.name -%></th>
+          <td><%=  frame.turn_number %></td>
+          <td><%=  frame.try1 %></td>
+          <td><%=  frame.try2 %></td>
+          <td><%=  frame.score %></td>
+          <td><%=  frame.status %></td>
+        </tr>
+       </tbody>
+    <% end %> 
+  </table>
+  <br>
+<% end -%>
+
+<%= button_to 'Start Game', new_game_frame_path, :method => "get", class: "form-control btn btn-primary" %>

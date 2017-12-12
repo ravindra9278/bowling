@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h3 style="text-align: center;">Player Listing</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr class="table-secondary">
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr class="table-secondary">
+        <th scope="row"><%= link_to "#{user.id}", edit_user_path(user) -%></th>
+        <td><%= link_to "#{user.name}", edit_user_path(user) %></td>
+        <td><%= link_to "#{user.email}", edit_user_path(user) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

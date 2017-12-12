@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<div class="field">
+	<strong>Game ID:</strong>
+	<span class="form-control"> <%= @game.id %>
+</div>
+
+<div class="field">
+	<strong>Number of Player:</strong>
+	<span class="form-control"> <%= @game.player_count %>
+</div>
+
+<hr>
+
+<%= button_to "Time to Play Bowling", game_frames_path(@game.id), class: "form-control btn btn-primary", :method => "get" -%>
+<br>
+<%= link_to 'Back', games_path(@game), class: "form-control btn btn-primary" -%>
+

@@ -1,0 +1,24 @@
+<%= form_with(model: game, local: true, :html => {:class => 'form-signin'}) do |form| %>
+  <% if game.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(game.errors.count, "error") %> prohibited this game from being saved:</h2>
+
+      <ul>
+      <% game.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label "Select Players" %>
+    <p><strong>Note:</strong> Mutiple select list (hold shift to select more than one)</p>
+    <%= form.select :player_lists, options_for_select(User.all.collect{|x| [x.email, x.id]}), {},
+        { :multiple => true, :class => "form-control" } %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
